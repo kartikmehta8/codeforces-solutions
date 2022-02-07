@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	string str, t, rev;
+    cin >> str >> t;
+    
+    rev = string(str.rbegin(),str.rend());
+    
+    if (rev == t) cout << "YES\n";
+    else cout << "NO\n";
+
+    return 0;
+	
+}
+
+// The translation from the Berland language into the Birland language is not an
+// easy task. Those languages are very similar: a berlandish word differs from a
+// birlandish word with the same meaning a little: it is spelled(and pronounced)
+// reversely. For example, a Berlandish word code corresponds to a Birlandish
+// word edoc. However, it's easy to make a mistake during the «translation».
+// Vasya translated word s from Berlandish into Birlandish as t. Help him: find
+// out if he translated the word correctly.
