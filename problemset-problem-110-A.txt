@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int SOD(long long X) {
+    if (X < 10) {
+        if (X == 4 || X == 7) return 1;
+        else return 0;
+    }
+    int temp = X%10;
+
+    if (temp == 4 || temp == 7) return 1+SOD(X/10);
+    else return 0+SOD(X/10);
+}
+
+int main() {
+
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	long long N;
+    cin >> N;
+    
+    int num = SOD(N);
+    if (num == 4 || num == 7) cout << "YES\n";
+    else cout << "NO\n";
+
+    return 0;
+	
+}
+
+// Petya loves lucky numbers. We all know that lucky numbers are the positive
+// integers whose decimal representations contain only the lucky digits 4 and 7.
+// For example, numbers 47, 744, 4 are lucky and 5, 17, 467 are not.
+
+// Unfortunately, not all numbers are lucky. Petya calls a number nearly lucky if
+// the number of lucky digits in it is a lucky number. He wonders whether number
+// n is a nearly lucky number.
