@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	string A, B;
+	cin >> A >> B;
+
+	transform(A.begin(), A.end(), A.begin(), ::toupper);
+	transform(B.begin(), B.end(), B.begin(), ::toupper);
+
+	if (A==B) cout << 0 << "\n";
+	else {
+		for (int i = 0; i < A.length(); i++) {
+			if (A[i] > B[i]) {
+				cout << 1 << "\n";
+				break;
+			}
+			if (A[i] < B[i]) {
+				cout << -1 << "\n";
+				break;
+			}
+		}
+	}
+
+	return 0;
+	
+}
+
+// Little Petya loves presents. His mum bought him two strings of the same size
+// for his birthday. The strings consist of uppercase and lowercase Latin
+// letters. Now Petya wants to compare those two strings lexicographically. The
+// letters' case does not matter, that is an uppercase letter is considered
+// equivalent to the corresponding lowercase letter. Help Petya perform the
+// comparison.
