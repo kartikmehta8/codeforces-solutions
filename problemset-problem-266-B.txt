@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int N, t;
+    cin >> N >> t;
+    string str;
+    cin >> str;
+    
+    for (int j = 0; j < t; j++) {
+        for (int i = 0; i < N-1; i++) {
+            if (str[i] == 'B' && str[i+1] == 'G') {
+                str[i] = 'G';
+                str[i+1] = 'B';
+                i++;
+            }
+        }
+    }
+    cout << str << "\n";
+    
+
+    return 0;
+	
+}
+
+// During the break the schoolchildren, boys and girls, formed a queue of n
+// people in the canteen. Initially the children stood in the order they entered
+// the canteen. However, after a while the boys started feeling awkward for
+// standing in front of the girls in the queue and they started letting the
+// girls move forward each second.
+
+// Let's describe the process more precisely. Let's say that the positions in the
+// queue are sequentially numbered by integers from 1 to n, at that the person
+// in the position number 1 is served first. Then, if at time x a boy stands on
+// the i-th position and a girl stands on the (i + 1)-th position, then at time
+// x + 1 the i-th position will have a girl and the (i + 1)-th position will
+// have a boy. The time is given in seconds.
+
+// You've got the initial position of the children, at the initial moment of
+// time. Determine the way the queue is going to look after t seconds.
