@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int SOD(int X) {
+	if (X < 10) return 1;
+	else return 1+SOD(X/10);
+}
+
+int main() {
+
+	// #ifndef ONLINE_JUDGE
+	// 	freopen("input.txt", "r", stdin);
+	// 	freopen("output.txt", "w", stdout);
+	// #endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int N;
+	cin >> N;
+	while (true) {
+	    int arr[10] = {0,1,2,3,4,5,6,7,8,9};
+		N++;   
+		int var = N;
+		while (var != 0) { 
+			int temp = var%10;
+			arr[temp] = -1;
+			var /= 10;
+		}
+		int minus=0;
+		for (int i = 0; i < 10; i++) {
+			if (arr[i] == -1) minus++;
+		}
+
+		if (SOD(N) == minus) {
+			cout << N;
+			break;
+		}
+	}
+
+    return 0;
+	
+}
+
+// It seems like the year of 2013 came only yesterday. Do you know a curious
+// fact? The year of 2013 is the first year after the old 1987 with only
+// distinct digits.
+
+// Now you are suggested to solve the following problem: given a year number,
+// find the minimum year number which is strictly larger than the given one and
+// has only distinct digits.
