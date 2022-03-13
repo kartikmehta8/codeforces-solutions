@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+#include <set>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+int main() {
+
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	string str;
+	set<char> s;
+	getline(cin, str);
+
+	if (str.length() == 2) cout << 0 << "\n";
+	else {
+		for (int i = 1; i < str.length(); i=i+3) {
+		s.insert(str[i]);
+		if (str[i+1] == '}') break;
+	}
+
+		cout << s.size() << "\n";
+	}
+
+    return 0;
+
+}
+
+// Recently, Anton has found a set. The set consists of small English letters.
+// Anton carefully wrote out all the letters from the set in one line, separated
+// by a comma. He also added an opening curved bracket at the beginning of the
+// line and a closing curved bracket at the end of the line.
+
+// Unfortunately, from time to time Anton would forget writing some letter and
+// write it again. He asks you to count the total number of distinct letters in
+// his set.
