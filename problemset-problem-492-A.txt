@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int N;
+    cin >> N;
+    
+    int n=1, count = 0;
+    int sum = n*(n+1)/2;
+    while (N >= sum) {
+        N -= sum;
+        n++;
+        count++;
+        sum = n*(n+1)/2;
+    }
+    
+    cout << count;
+
+    return 0;
+
+}
+
+// Vanya got n cubes. He decided to build a pyramid from them. Vanya wants to
+// build the pyramid as follows: the top level of the pyramid must consist of 1
+// cube, the second level must consist of 1 + 2 = 3 cubes, the third level must
+// have 1 + 2 + 3 = 6 cubes, and so on. Thus, the i-th level of the pyramid must
+// have 1 + 2 + ... + (i - 1) + i cubes.
+
+// Vanya wants to know what is the maximum height of the pyramid that he can make
+// using the given cubes.
