@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int N;
+	cin >> N;
+	int memo[N][N];
+	for (int i = 0; i < N; i++) memo[0][i] = 1;
+	for (int i = 0; i < N; i++) memo[i][0] = 1;
+
+	for (int i = 1; i < N; i++) {
+		for (int j = 1; j < N; j++) {
+			memo[i][j] = memo[i-1][j]+memo[i][j-1];
+		}
+	}
+
+	cout << memo[N-1][N-1] << "\n";
+
+    return 0;
+
+}
+
+// An n × n table a is defined as follows:
+
+// The first row and the first column contain ones, that is: ai, 1 = a1, i = 1
+// for all i = 1, 2, ..., n. Each of the remaining numbers in the table is equal
+// to the sum of the number above it and the number to the left of it. In other
+// words, the remaining elements are defined by the formula ai, j = ai - 1, j +
+// ai, j - 1. These conditions define all the values in the table.
+
+// You are given a number n. You need to determine the maximum value in the n × n
+// table defined by the rules above.
