@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+#include <set>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+int main() {
+
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int N;
+	string str;
+	cin >> N >> str;
+	
+	set<char> s;
+
+	transform(str.begin(), str.end(), str.begin(), ::tolower);
+
+	for (int i = 0; i < N; i++) s.insert(str[i]);
+
+	if (s.size() == 26) cout << "YES\n";
+	else cout << "NO\n";
+
+    return 0;
+
+}
+
+// A word or a sentence in some language is called a pangram if all the
+// characters of the alphabet of this language appear in it at least once.
+// Pangrams are often used to demonstrate fonts in printing or test the output
+// devices.
+
+// You are given a string consisting of lowercase and uppercase Latin letters.
+// Check whether this string is a pangram. We say that the string contains a
+// letter of the Latin alphabet if this letter occurs in the string in uppercase
+// or lowercase.
