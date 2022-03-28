@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int N;
+	cin >> N;
+	int A, B, mishka=0, chris=0;
+	FOR(N) {
+		cin >> A >> B;
+		if (A > B) mishka++;
+		else if (B > A) chris++;
+	}
+
+	if (mishka > chris) cout << "Mishka";
+	else if (chris > mishka) cout << "Chris";
+	else cout << "Friendship is magic!^^";
+
+    return 0;
+
+}
+
+// Mishka is a little polar bear. As known, little bears loves spending their
+// free time playing dice for chocolates. Once in a wonderful sunny morning,
+// walking around blocks of ice, Mishka met her friend Chris, and they started
+// playing the game.
+
+// Rules of the game are very simple: at first number of rounds n is defined. In
+// every round each of the players throws a cubical dice with distinct numbers
+// from 1 to 6 written on its faces. Player, whose value after throwing the dice
+// is greater, wins the round. In case if player dice values are equal, no one
+// of them is a winner.
+
+// In average, player, who won most of the rounds, is the winner of the game. In
+// case if two players won the same number of rounds, the result of the game is
+// draw.
+
+// Mishka is still very little and can't count wins and losses, so she asked you
+// to watch their game and determine its result. Please help her!
