@@ -1,0 +1,62 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+void PRINT(int second, int X, int Y) {
+	cout << abs(second-X)+ abs(second-Y);
+}
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int A, B, C, sec_max;
+	cin >> A >> B >> C;
+	if (A >= B && A >= C) {
+		if (B >= C) {
+			sec_max = B;
+			PRINT(sec_max, A, C);
+		}
+		else {
+			sec_max = C;
+			PRINT(sec_max, A, B);
+		}
+	} else if (B >= A && B >= C) {
+		if (A >= C) {
+			sec_max = A;
+			PRINT(sec_max, B, C);
+		}
+		else {
+			sec_max = C;
+			PRINT(sec_max, A, B);
+		} 
+	} else if (C >= A && C >= B) {
+		if (A >= B) {
+			sec_max = A;
+			PRINT(sec_max, B, C);
+		}
+		else {
+			sec_max = B;
+			PRINT(sec_max, A, C);
+		}
+	}
+
+    return 0;
+
+}
+
+// There are three friend living on the straight line Ox in Lineland. The first
+// friend lives at the point x1, the second friend lives at the point x2, and
+// the third friend lives at the point x3. They plan to celebrate the New Year
+// together, so they need to meet at one point. What is the minimum total
+// distance they have to travel in order to meet at some point and celebrate the
+// New Year?
+
+// It's guaranteed that the optimal answer is always integer.
