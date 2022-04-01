@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < Y; i++)
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int k, r;
+	cin >> k >> r;
+
+	for (int i = 1; i <= 9; i++) {
+		if (((i*k)%10==r) || (i*k)%10==0) {
+		  	cout << i;
+		  	break;
+		}
+	}
+
+    return 0;
+
+}
+
+// Polycarp urgently needs a shovel! He comes to the shop and chooses an
+// appropriate one. The shovel that Policarp chooses is sold for k burles.
+// Assume that there is an unlimited number of such shovels in the shop.
+
+// In his pocket Polycarp has an unlimited number of "10-burle coins" and exactly
+// one coin of r burles (1 ≤ r ≤ 9).
+
+// What is the minimum number of shovels Polycarp has to buy so that he can pay
+// for the purchase without any change? It is obvious that he can pay for 10
+// shovels without any change (by paying the requied amount of 10-burle coins
+// and not using the coin of r burles). But perhaps he can buy fewer shovels and
+// pay without any change. Note that Polycarp should buy at least one shovel.
