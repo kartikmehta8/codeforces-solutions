@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int N, A=0, D=0;
+    cin >> N;
+    char arr[N];
+    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++) {
+    	if (arr[i] == 'A') A++;
+    	else if (arr[i] == 'D') D++;
+    }
+
+    if (A == D) cout << "Friendship";
+    else if (A  > D) cout << "Anton";
+    else cout << "Danik";
+
+    return 0;
+	
+}
+
+// Anton likes to play chess, and so does his friend Danik.
+
+// Once they have played n games in a row. For each game it's known who was the
+// winner — Anton or Danik. None of the games ended with a tie.
+
+// Now Anton wonders, who won more games, he or Danik? Help him determine this.
