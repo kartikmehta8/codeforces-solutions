@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int N;
+	cin >> N;
+	int arr[N];
+	FOR(N) cin >> arr[i];
+	if (N==1) cout << 0;
+	else {
+		sort(arr, arr+N);
+		int max = arr[N-1], total=0;
+		for (int i = 0; i < N-1; i++) {
+			total += abs(arr[i]-max);
+		}
+		cout << total;
+	}
+
+    return 0;
+
+}
+
+// In Berland it is the holiday of equality. In honor of the holiday the king
+// decided to equalize the welfare of all citizens in Berland by the expense of
+// the state treasury.
+
+// Totally in Berland there are n citizens, the welfare of each of them is
+// estimated as the integer in ai burles (burle is the currency in Berland).
+
+// You are the royal treasurer, which needs to count the minimum charges of the
+// kingdom on the king's present. The king can only give money, he hasn't a
+// power to take away them.
