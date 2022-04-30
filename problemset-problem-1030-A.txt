@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int N, count=0;
+	cin >> N;
+	int arr[N];
+	for (int i = 0; i < N; i++) {
+		cin >> arr[i];
+	}
+
+	for (int i = 0; i < N; i++) {
+		if (arr[i] == 1) count++;
+	}
+
+	if (count >= 1) cout << "HARD" << "\n";
+	else cout << "EASY" << "\n";
+
+    return 0;
+	
+}
+
+// When preparing a tournament, Codeforces coordinators try treir best to make
+// the first problem as easy as possible. This time the coordinator had chosen
+// some problem and asked n people about their opinions. Each person answered
+// whether this problem is easy or hard.
+
+// If at least one of these n people has answered that the problem is hard, the
+// coordinator decides to change the problem. For the given responses, check if
+// the problem is easy enough.
