@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int T;
+	cin >> T;
+	while(T--) {
+		int H, M;
+		cin >> H >> M;
+		cout << (24-H-1)*60+(60-M) << "\n";
+	}
+    
+    return 0;
+
+}
+
+// New Year is coming and you are excited to know how many minutes remain before
+// the New Year. You know that currently the clock shows h hours and m minutes,
+// where 0≤hh<24 and 0≤mm<60. We use 24-hour time format!
+
+// Your task is to find the number of minutes before the New Year. You know that
+// New Year comes when the clock shows 0 hours and 0 minutes.
+
+// You have to answer t independent test cases.
