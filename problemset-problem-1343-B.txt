@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int T;
+	cin >> T;
+	FOR(T) {
+		int N;
+		cin >> N;
+		int temp = N/2;
+		if (temp%2==1) cout << "NO\n";
+		else {
+			cout << "YES\n";
+			int sum_even = 0, sum_odd = 0;
+			for (int i = 1; i <= N/2; i++) {
+				cout << i*2 << " ";
+				sum_even  += i*2;
+			}
+			int odd_count = N/2-1, start = 1;
+			while (odd_count) {
+				cout << start << " ";
+				sum_odd += start;
+				start += 2;
+				odd_count--;
+			}
+			cout << sum_even-sum_odd;
+			cout << "\n";
+		}
+	}
+
+    return 0;
+
+}
+
+// You are given a positive integer n, it is guaranteed that n is even (i.e. divisible by 2).
+
+// You want to construct the array a of length n such that:
+
+// The first n2 elements of a are even (divisible by 2);
+// the second n2 elements of a are odd (not divisible by 2);
+// all elements of a are distinct and positive;
+// the sum of the first half equals to the sum of the second half (∑i=1n2ai=∑i=n2+1nai).
+// If there are multiple answers, you can print any. It is not guaranteed that the answer exists.
+
+// You have to answer t independent test cases.
