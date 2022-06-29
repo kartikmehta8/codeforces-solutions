@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int T;
+	cin >> T;
+	FOR(T) {
+		int A, B;
+		cin >> A >> B;
+		int arr[2] = {A, B};
+		sort(arr, arr+2);
+		arr[0] = arr[0]*2;
+		sort(arr, arr+2);
+		cout << arr[1]*arr[1] << "\n";
+	}
+
+    return 0;
+
+}
+
+// Find the minimum area of a square land on which you can place two identical
+// rectangular a×b houses. The sides of the houses should be parallel to the
+// sides of the desired square land.
+
+// Formally,
+
+// You are given two identical rectangles with side lengths a and b
+// (1≤a,b≤100) — positive integers (you are given just the sizes, but not their
+// positions). Find the square of the minimum area that contains both given
+// rectangles. Rectangles can be rotated (both or just one), moved, but the
+// sides of the rectangles should be parallel to the sides of the desired
+// square. Two rectangles can touch each other (side or corner), but cannot
+// intersect. Rectangles can also touch the sides of the square but must be
+// completely inside it. You can rotate the rectangles. Take a look at the
+// examples for a better understanding.
