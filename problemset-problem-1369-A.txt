@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int T;
+    cin >> T;
+    
+    while (T--) {
+        int N;
+        cin >> N;
+        if (N%4==0) cout << "YES\n";
+        else cout << "NO\n";
+    }
+
+    return 0;
+
+}
+
+// Lee is going to fashionably decorate his house for a party, using some regular
+// convex polygons...
+
+// Lee thinks a regular n-sided (convex) polygon is beautiful if and only if he
+// can rotate it in such a way that at least one of its edges is parallel to the
+// OX-axis and at least one of its edges is parallel to the OY-axis at the same
+// time.
+
+// Recall that a regular n-sided polygon is a convex polygon with n vertices such
+// that all the edges and angles are equal.
+
+// Now he is shopping: the market has t regular polygons. For each of them print
+// YES if it is beautiful and NO otherwise.
