@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int T;
+	cin >> T;
+	FOR(T) {
+		long long N;
+		cin >> N;
+		if (N%2==0) cout << N/2 << "\n";
+		else cout << (N+1)/2 << "\n";
+	}
+    
+    return 0;
+
+}
+
+// A penguin Rocher has n sticks. He has exactly one stick with length i for all
+// 1≤i≤n.
+
+// He can connect some sticks. If he connects two sticks that have lengths a and
+// b, he gets one stick with length a+b. Two sticks, that were used in the
+// operation disappear from his set and the new connected stick appears in his
+// set and can be used for the next connections.
+
+// He wants to create the maximum number of sticks that have the same length. It
+// is not necessary to make all sticks have the same length, some sticks can
+// have the other length. How many sticks with the equal length he can create?
