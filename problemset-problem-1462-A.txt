@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int T;
+	cin >> T;
+	for (int i = 0; i < T; i++) {
+		int N;
+		cin >> N;
+		int arr[N];
+		for (int j = 0; j < N; j++) cin >> arr[j];
+		int begin = 0, end = N-1;
+		for (int j = 0; j < N; j++) {
+			if (j%2==0) {
+				cout << arr[begin] << " ";
+				begin++;
+			} else {
+				cout << arr[end] << " ";
+				end--;
+			}
+		}
+		cout << "\n";
+	}
+
+    return 0;
+
+}
+
+// Polycarp has a favorite sequence a[1…n] consisting of n integers. He wrote it
+// out on the whiteboard as follows:
+
+// he wrote the number a1 to the left side (at the beginning of the whiteboard);
+// he wrote the number a2 to the right side (at the end of the whiteboard); then
+// as far to the left as possible (but to the right from a1), he wrote the
+// number a3; then as far to the right as possible (but to the left from a2), he
+// wrote the number a4; Polycarp continued to act as well, until he wrote out
+// the entire sequence on the whiteboard. The beginning of the result looks like
+// this (of course, if n≥4). For example, if n=7 and a=[3,1,4,1,5,9,2], then
+// Polycarp will write a sequence on the whiteboard [3,4,5,2,9,1,1].
+
+// You saw the sequence written on the whiteboard and now you want to restore
+// Polycarp's favorite sequence.
