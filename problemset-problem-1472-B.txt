@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int T;
+	cin >> T;
+	FOR(T) {
+		int N, one = 0, two = 0;
+		cin >> N;
+		int arr[N];
+		FOR(N) cin >> arr[i];
+		FOR(N) {
+			if (arr[i] ==  1) one++;
+			else two++;
+		}
+		if (two == 0 && one % 2 == 0) cout << "YES\n";
+		else if (two == 0 && one % 2 != 0) cout << "NO\n";
+		else if (one == 0 && two % 2 == 0) cout << "YES\n";
+		else if (one == 0 && two % 2 != 0) cout << "NO\n";
+		else {
+			if (two % 2 != 0 && one % 2 == 0 && one != 0) cout << "YES\n";
+			else if (two % 2 == 0 && one % 2 != 0) cout << "NO\n";
+			else if (one % 2 == 0 && two % 2 == 0) cout << "YES\n";
+			else if (one % 2 != 0 && two % 2 != 0) cout << "NO\n";
+		}
+	}
+
+    return 0;
+
+}
+
+// Alice and Bob received n candies from their parents. Each candy weighs either
+// 1 gram or 2 grams. Now they want to divide all candies among themselves
+// fairly so that the total weight of Alice's candies is equal to the total
+// weight of Bob's candies.
+
+// Check if they can do that.
+
+// Note that candies are not allowed to be cut in half.
