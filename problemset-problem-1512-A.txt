@@ -1,0 +1,66 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define FOR(X) for (int i = 0; i < X; i++)
+
+int LEN(int X) {
+	if (X < 10) return 1;
+	else return 1+LEN(X/10);
+}
+
+int main() {
+    
+    #ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	std::ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int T;
+	cin >> T;
+	FOR(T) {
+		int N;
+		cin >> N;
+		int arr[N];
+		FOR(N) cin >> arr[i];
+		if (arr[0] != arr[1]) {
+			if (arr[0] == arr[2]) {
+				cout << 2 << "\n";
+			} else {
+				cout << 1 << "\n";
+			}
+		} else if (arr[1] != arr[2]) {
+			if (arr[0] == arr[1]) {
+				cout << 3 << "\n";
+			} else {
+				cout << 2 << "\n";
+			}
+		} else if (arr[0] != arr[2]) {
+			if (arr[1] == arr[0]) {
+				cout << 3 << "\n";
+			} else {
+				cout << 1 << "\n";
+			}
+		} else {
+			int target = arr[0];
+			for (int i = 1; i < N; i++) {
+				if (arr[i] != target) {
+					cout << i+1 << "\n";
+					break;
+				}
+			}
+		}
+	}
+
+    return 0;
+
+}
+
+// You are given an array a consisting of n (n≥3) positive integers. It is known
+// that in this array, all the numbers except one are the same (for example, in
+// the array [4,11,4,4] all numbers except one are equal to 4).
+
+// Print the index of the element that does not equal others. The numbers in the
+// array are numbered from one.
